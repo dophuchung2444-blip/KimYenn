@@ -1,2 +1,2 @@
 # KimYenn
-<img src="images/Kim-Yen.jpg">
+<img src="images/KimYen.jpg">
