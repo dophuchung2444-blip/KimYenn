@@ -7,6 +7,37 @@
 <title>Dành Cho Kim Yến ❤️</title>
 
 <style>
+  .bg{
+    position:fixed;
+    inset:0;
+    display:flex;
+    z-index:-2;
+}
+
+.part{
+    flex:1;
+
+    background-image:url("IMG_4757.JPG");
+
+    background-size:cover;
+    background-repeat:no-repeat;
+
+    filter:blur(15px) brightness(.45);
+
+    transform:scale(1.05);
+}
+
+.left{
+    background-position:left;
+}
+
+.center{
+    background-position:center;
+}
+
+.right{
+    background-position:right;
+}
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
 
 body{
@@ -83,6 +114,11 @@ to{transform:translateY(-100px);opacity:0;}
 </head>
 
 <body>
+  <div class="bg">
+    <div class="part left"></div>
+    <div class="part center"></div>
+    <div class="part right"></div>
+</div>
 
 <div class="box" id="app">
 
@@ -103,12 +139,12 @@ app.innerHTML=`
 <img class="photo"
 src="025503e9-a73f-49c1-92e1-fc1ef159b886.jpg">
 
-<h1>Who stole my heart?</h1>
+<h1>ai là cô gái tuyệt vời đã bước vào trái tim của tui nhỉ?</h1>
 
-<h2>It's You ❤️</h2>
+<h2>Nguyễn Trần Kim Yến chớ ai</h2>
 
 <button onclick="page3()">
-Tiếp tục
+Típ nè
 </button>
 
 `;
@@ -141,7 +177,7 @@ Nhưng tất cả những gì ở đây
 </p>
 
 <button onclick="page4()">
-Tiếp tục ❤️
+típ đi quớ ngại
 </button>
 
 `;
@@ -162,12 +198,11 @@ src="025503e9-a73f-49c1-92e1-fc1ef159b886.jpg">
 <br>
 
 <p>
-Nếu có thêm ảnh khác,
-m có thể thay vào đây.
+tui nghĩ thêm 1 vài khoảnh khắc của tụi mình vào thì tình hơnnn
 </p>
 
 <button onclick="page5()">
-Tiếp tục
+qua típ nhe
 </button>
 
 `;
@@ -178,18 +213,18 @@ function page5(){
 
 app.innerHTML=`
 
-<h1>✨ Những điều tớ thích ở cậu ✨</h1>
+<h1>✨những điều tui thích ở Kim Yến✨</h1>
 
 <br>
 
-<p>🌷 Dễ thương</p>
-<p>🌷 Hay cười</p>
-<p>🌷 Tốt bụng</p>
-<p>🌷 Quan tâm người khác</p>
-<p>🌷 Là chính mình</p>
+<p>🌷 sao phải đọc nhỉ</p>
+<p>🌷 tui thích tất cả của Kim Yến lun í</p>
+<p>🌷 mọi khoảnh khắc lun không chừa 1 lúc nào hết</p>
+<p>🌷 đặc biệt là có thể nghe tui lải nhải quài</p>
+<p>🌷 thích mọi thứ ở Kim Yến </p>
 
 <button onclick="page6()">
-Tiếp tục ❤️
+còn 1 trang nữa này quan trọng nhấtt
 </button>
 
 `;
