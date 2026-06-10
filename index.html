@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
@@ -6,49 +7,48 @@
 <title>Dành Cho Kim Yến ❤️</title>
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
 
 body{
 height:100vh;
-overflow:hidden;
-background:url("025503e9-a73f-49c1-92e1-fc1ef159b886.jpg");
-background-size:cover;
-background-position:center;
 display:flex;
 justify-content:center;
 align-items:center;
-color:white;
-text-align:center;
+overflow:hidden;
+position:relative;
 }
 
-.overlay{
+body::before{
+content:"";
 position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,.6);
-z-index:-1;
+inset:0;
+background:url("025503e9-a73f-49c1-92e1-fc1ef159b886.jpg");
+background-size:cover;
+background-position:center;
+filter:blur(18px) brightness(.4);
+transform:scale(1.1);
+z-index:-2;
 }
 
 .box{
+width:90%;
 max-width:700px;
 padding:40px;
+background:rgba(255,255,255,.12);
+backdrop-filter:blur(10px);
+border-radius:25px;
+text-align:center;
+color:white;
 }
 
-img{
+.photo{
 width:220px;
 height:220px;
 object-fit:cover;
 border-radius:50%;
-border:5px solid white;
-margin-bottom:20px;
+border:4px solid white;
 box-shadow:0 0 25px hotpink;
+margin-bottom:20px;
 }
 
 button{
@@ -57,7 +57,7 @@ font-size:18px;
 border:none;
 border-radius:30px;
 cursor:pointer;
-margin:10px;
+margin-top:20px;
 }
 
 #yes{
@@ -71,58 +71,44 @@ background:white;
 
 .heart{
 position:absolute;
-font-size:25px;
+font-size:24px;
 animation:fly 8s linear forwards;
 }
 
 @keyframes fly{
-from{
-transform:translateY(100vh);
-opacity:1;
-}
-to{
-transform:translateY(-100px);
-opacity:0;
-}
+from{transform:translateY(100vh);}
+to{transform:translateY(-100px);opacity:0;}
 }
 </style>
+
 </head>
 
 <body>
 
-<div class="overlay"></div>
+<div class="box" id="app">
 
-<div class="box" id="content">
+<h1>Có một điều tớ muốn nói với cậu...</h1>
 
-<h1>
-Who stole my heart?
-</h1>
-
-<br>
-
-<button onclick="showCrush()">
-Reveal ❤️
+<button onclick="page2()">
+Mở bức thư 💌
 </button>
 
 </div>
 
 <script>
 
-function showCrush(){
+function page2(){
 
-document.getElementById("content").innerHTML=`
+app.innerHTML=`
 
-<img src="images/kimyen.jpg">
+<img class="photo"
+src="025503e9-a73f-49c1-92e1-fc1ef159b886.jpg">
 
-<h1>It's You ❤️</h1>
+<h1>Who stole my heart?</h1>
 
-<p>
-Tớ đã suy nghĩ rất lâu mới dám nói điều này...
-</p>
+<h2>It's You ❤️</h2>
 
-<br>
-
-<button onclick="showLetter()">
+<button onclick="page3()">
 Tiếp tục
 </button>
 
@@ -130,36 +116,32 @@ Tiếp tục
 
 }
 
-function showLetter(){
+function page3(){
 
-document.getElementById("content").innerHTML=`
+app.innerHTML=`
 
-<img src="images/kimyen.jpg">
+<img class="photo"
+src="025503e9-a73f-49c1-92e1-fc1ef159b886.jpg">
 
 <h1>Kim Yến à...</h1>
 
-<p style="line-height:1.8">
+<p>
 
-Tớ không phải người hoàn hảo.
-
-<br><br>
-
-Nhưng tớ thật sự thích cậu.
+Tớ đã suy nghĩ rất lâu
+mới dám làm trang web này.
 
 <br><br>
 
-Mỗi lần nói chuyện với cậu
-đều làm ngày hôm đó vui hơn.
+Có thể nó không hoàn hảo.
 
 <br><br>
 
-Vì vậy...
+Nhưng tất cả những gì ở đây
+đều là thật lòng.
 
 </p>
 
-<br>
-
-<button onclick="showQuestion()">
+<button onclick="page4()">
 Tiếp tục ❤️
 </button>
 
@@ -167,17 +149,66 @@ Tiếp tục ❤️
 
 }
 
-function showQuestion(){
+function page4(){
 
-document.getElementById("content").innerHTML=`
+app.innerHTML=`
 
-<img src="images/kimyen.jpg">
+<h1>📸 Một vài khoảnh khắc</h1>
+
+<br>
+
+<img class="photo"
+src="025503e9-a73f-49c1-92e1-fc1ef159b886.jpg">
+
+<br>
+
+<p>
+Nếu có thêm ảnh khác,
+m có thể thay vào đây.
+</p>
+
+<button onclick="page5()">
+Tiếp tục
+</button>
+
+`;
+
+}
+
+function page5(){
+
+app.innerHTML=`
+
+<h1>✨ Những điều tớ thích ở cậu ✨</h1>
+
+<br>
+
+<p>🌷 Dễ thương</p>
+<p>🌷 Hay cười</p>
+<p>🌷 Tốt bụng</p>
+<p>🌷 Quan tâm người khác</p>
+<p>🌷 Là chính mình</p>
+
+<button onclick="page6()">
+Tiếp tục ❤️
+</button>
+
+`;
+
+}
+
+function page6(){
+
+app.innerHTML=`
+
+<img class="photo"
+src="025503e9-a73f-49c1-92e1-fc1ef159b886.jpg">
 
 <h1>
 Cho tớ một cơ hội được không?
 </h1>
 
-<button id="yes" onclick="success()">
+<button id="yes" onclick="page7()">
 Có ❤️
 </button>
 
@@ -199,21 +230,15 @@ no.style.top=Math.random()*80+"vh";
 
 }
 
-function success(){
+function page7(){
 
-document.getElementById("content").innerHTML=`
+app.innerHTML=`
 
-<h1 style="font-size:70px">
-🎉
-</h1>
+<h1 style="font-size:70px">🎉</h1>
 
-<h1>
-MISSION COMPLETE
-</h1>
+<h1>MISSION COMPLETE</h1>
 
-<h2>
-New Partner Unlocked ❤️
-</h2>
+<h2>New Partner Unlocked ❤️</h2>
 
 `;
 
@@ -221,23 +246,22 @@ New Partner Unlocked ❤️
 
 function createHeart(){
 
-const h=document.createElement("div");
+const heart=document.createElement("div");
 
-h.className="heart";
+heart.className="heart";
+heart.innerHTML="❤️";
 
-h.innerHTML="❤️";
+heart.style.left=Math.random()*100+"vw";
 
-h.style.left=Math.random()*100+"vw";
-
-document.body.appendChild(h);
+document.body.appendChild(heart);
 
 setTimeout(()=>{
-h.remove();
+heart.remove();
 },8000);
 
 }
 
-setInterval(createHeart,300);
+setInterval(createHeart,500);
 
 </script>
 
