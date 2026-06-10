@@ -7,38 +7,57 @@
 <title>Dành Cho Kim Yến ❤️</title>
 
 <style>
-  .bg{
-    position:fixed;
-    inset:0;
-    display:flex;
-    z-index:-2;
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+/* nền 3 phần */
+
+.bg{
+position:fixed;
+inset:0;
+display:flex;
+overflow:hidden;
+z-index:-2;
 }
 
 .part{
-    flex:1;
+flex:1;
 
-    background-image:url("IMG_4757.JPG");
+background-image:url("IMG_4757.JPG");
 
-    background-size:cover;
-    background-repeat:no-repeat;
+background-size:cover;
+background-repeat:no-repeat;
 
-    filter:blur(15px) brightness(.45);
+filter:blur(20px) brightness(.4);
 
-    transform:scale(1.05);
+transform:scale(1.15);
 }
 
 .left{
-    background-position:left;
+background-position:left center;
 }
 
 .center{
-    background-position:center;
+background-position:center center;
 }
 
 .right{
-    background-position:right;
+background-position:right center;
 }
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
+
+/* lớp tối phủ lên nền */
+
+.bg::after{
+content:"";
+position:absolute;
+inset:0;
+background:rgba(0,0,0,.25);
+}
 
 body{
 height:100vh;
@@ -52,21 +71,35 @@ position:relative;
 .box{
 width:90%;
 max-width:700px;
+
 padding:40px;
+
 background:rgba(255,255,255,.12);
+
 backdrop-filter:blur(10px);
+
 border-radius:25px;
+
 text-align:center;
+
 color:white;
+
+position:relative;
+z-index:2;
 }
 
 .photo{
 width:220px;
 height:220px;
+
 object-fit:cover;
+
 border-radius:50%;
+
 border:4px solid white;
+
 box-shadow:0 0 25px hotpink;
+
 margin-bottom:20px;
 }
 
@@ -95,11 +128,16 @@ animation:fly 8s linear forwards;
 }
 
 @keyframes fly{
-from{transform:translateY(100vh);}
-to{transform:translateY(-100px);opacity:0;}
+from{
+transform:translateY(100vh);
 }
-</style>
+to{
+transform:translateY(-100px);
+opacity:0;
+}
+}
 
+</style>
 </head>
 
 <body>
