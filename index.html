@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dành Cho Kim Yến ❤️</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+height:100vh;
+overflow:hidden;
+background:url("images/city.jpg");
+background-size:cover;
+background-position:center;
+display:flex;
+justify-content:center;
+align-items:center;
+color:white;
+text-align:center;
+}
+
+.overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.6);
+z-index:-1;
+}
+
+.box{
+max-width:700px;
+padding:40px;
+}
+
+img{
+width:220px;
+height:220px;
+object-fit:cover;
+border-radius:50%;
+border:5px solid white;
+margin-bottom:20px;
+box-shadow:0 0 25px hotpink;
+}
+
+button{
+padding:12px 24px;
+font-size:18px;
+border:none;
+border-radius:30px;
+cursor:pointer;
+margin:10px;
+}
+
+#yes{
+background:#ff2d55;
+color:white;
+}
+
+#no{
+background:white;
+}
+
+.heart{
+position:absolute;
+font-size:25px;
+animation:fly 8s linear forwards;
+}
+
+@keyframes fly{
+from{
+transform:translateY(100vh);
+opacity:1;
+}
+to{
+transform:translateY(-100px);
+opacity:0;
+}
+}
+</style>
+</head>
+
+<body>
+
+<div class="overlay"></div>
+
+<div class="box" id="content">
+
+<h1>
+Who stole my heart?
+</h1>
+
+<br>
+
+<button onclick="showCrush()">
+Reveal ❤️
+</button>
+
+</div>
+
+<script>
+
+function showCrush(){
+
+document.getElementById("content").innerHTML=`
+
+<img src="images/kimyen.jpg">
+
+<h1>It's You ❤️</h1>
+
+<p>
+Tớ đã suy nghĩ rất lâu mới dám nói điều này...
+</p>
+
+<br>
+
+<button onclick="showLetter()">
+Tiếp tục
+</button>
+
+`;
+
+}
+
+function showLetter(){
+
+document.getElementById("content").innerHTML=`
+
+<img src="images/kimyen.jpg">
+
+<h1>Kim Yến à...</h1>
+
+<p style="line-height:1.8">
+
+Tớ không phải người hoàn hảo.
+
+<br><br>
+
+Nhưng tớ thật sự thích cậu.
+
+<br><br>
+
+Mỗi lần nói chuyện với cậu
+đều làm ngày hôm đó vui hơn.
+
+<br><br>
+
+Vì vậy...
+
+</p>
+
+<br>
+
+<button onclick="showQuestion()">
+Tiếp tục ❤️
+</button>
+
+`;
+
+}
+
+function showQuestion(){
+
+document.getElementById("content").innerHTML=`
+
+<img src="images/kimyen.jpg">
+
+<h1>
+Cho tớ một cơ hội được không?
+</h1>
+
+<button id="yes" onclick="success()">
+Có ❤️
+</button>
+
+<button id="no">
+Để suy nghĩ 🤭
+</button>
+
+`;
+
+const no=document.getElementById("no");
+
+no.addEventListener("mouseover",()=>{
+
+no.style.position="absolute";
+no.style.left=Math.random()*80+"vw";
+no.style.top=Math.random()*80+"vh";
+
+});
+
+}
+
+function success(){
+
+document.getElementById("content").innerHTML=`
+
+<h1 style="font-size:70px">
+🎉
+</h1>
+
+<h1>
+MISSION COMPLETE
+</h1>
+
+<h2>
+New Partner Unlocked ❤️
+</h2>
+
+`;
+
+}
+
+function createHeart(){
+
+const h=document.createElement("div");
+
+h.className="heart";
+
+h.innerHTML="❤️";
+
+h.style.left=Math.random()*100+"vw";
+
+document.body.appendChild(h);
+
+setTimeout(()=>{
+h.remove();
+},8000);
+
+}
+
+setInterval(createHeart,300);
+
+</script>
+
+</body>
+</html>
